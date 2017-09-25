@@ -53,6 +53,11 @@
 
 .expandNanoInput:checked ~ .expandNanoLabel .miniOfferList {
   opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .expandNanoInput:checked ~ .bigNanoContainer {
@@ -70,11 +75,11 @@
   height: 20px;
   overflow: hidden;
   padding: 10px 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .miniOffer {
@@ -133,11 +138,11 @@
   width: 100%;
 }
 
-.bigNanoSlide {
+.bigNanoSlides .bigNanoSlide {
   width: 100%;
 }
 
-.bigNanoSlide p {
+.bigNanoSlides .bigNanoSlide p {
   color: #fff;
   font-size: 14px;
   line-height: 1.5;
@@ -146,17 +151,17 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.bigNanoSlide p.mainOfferBig {
+.bigNanoSlides .bigNanoSlide p.mainOfferBig {
   font-size: 2.5em;
   line-height: 1;
   font-weight: bold;
 }
 
-.bigNanoSlide p.mainOfferSmall {
+.bigNanoSlides .bigNanoSlide p.mainOfferSmall {
   font-size: 1.4em;
 }
 
-.bigNanoSlide .mainOfferlink {
+.bigNanoSlides .bigNanoSlide .mainOfferlink {
   color: #fff;
   font-size: 1.3em;
   font-weight: bold;
@@ -164,7 +169,7 @@
   display: inline-block;
 }
 
-.bigNanoSlide .mainOfferdisc {
+.bigNanoSlides .bigNanoSlide .mainOfferdisc {
   color: #fff;
   font-size: .8em;
 }
