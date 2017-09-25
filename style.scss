@@ -1,67 +1,66 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+@mixin transform($var) {
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -ms-transform: $var;
+  -o-transform: $var;
+  transform: $var;
+}
+
+
 /* full width */
 .expandNanoContainer {
   width: 100%;
   background-color: #000;
 }
-
 /* width of website */
 .expandNanoWrapper {
   max-width: 984px;
   width: 100%;
   margin: 0 auto;
 }
-
 /* expand functionality */
-.expandNanoInput {
-  display: none;
-}
-
+.expandNanoInput { display: none; }
 .expandNanoLabel {
   cursor: pointer;
   display: table;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing();
 }
-
 /* expand button/arrow */
 .expandNanoButton {
   width: 30px;
   display: table-cell;
   vertical-align: middle;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+  @include transition(all .3s ease);
+  @include transform(rotate(180deg));
   text-align: center;
 }
-
 .expandNanoInput:checked ~ .expandNanoLabel .expandNanoButton {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
+  @include transform(rotate(0deg));
 }
-
 .expandNanoInput:checked ~ .expandNanoLabel .miniOfferList {
   opacity: 0;
 }
-
 .expandNanoInput:checked ~ .bigNanoContainer {
   max-height: 999px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  @include transition(all 1s ease);
 }
 
 /* mini list */
@@ -70,13 +69,8 @@
   height: 20px;
   overflow: hidden;
   padding: 10px 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  @include transition(all .5s ease);
 }
-
 .miniOffer {
   display: none;
   color: #fff;
@@ -88,7 +82,6 @@
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
-
 .miniOffer.active {
   display: block;
 }
@@ -100,43 +93,33 @@
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
-  transition: all .5s ease;
+  transition: all .5s ease; 
 }
-
 .bigNanoCarousel {
   padding: 5px 10%;
   display: table;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing();
 }
-
 .bigNanoCarousel .prevArrow,
 .bigNanoCarousel .nextArrow {
   cursor: pointer;
   display: table-cell;
   vertical-align: middle;
 }
-
-.bigNanoCarousel .prevArrow {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+.bigNanoCarousel .prevArrow { 
+  @include transform(rotate(180deg));
 }
-
 .bigNanoSlides {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
 }
-
 .bigNanoSlide {
   width: 100%;
 }
-
+.bigNanoSlide.active {
+}
 .bigNanoSlide p {
   color: #fff;
   font-size: 14px;
@@ -145,17 +128,14 @@
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .bigNanoSlide p.mainOfferBig {
   font-size: 2.5em;
   line-height: 1;
   font-weight: bold;
 }
-
 .bigNanoSlide p.mainOfferSmall {
   font-size: 1.4em;
 }
-
 .bigNanoSlide .mainOfferlink {
   color: #fff;
   font-size: 1.3em;
@@ -163,11 +143,7 @@
   padding: .5em;
   display: inline-block;
 }
-
 .bigNanoSlide .mainOfferdisc {
   color: #fff;
   font-size: .8em;
 }
- 
-
- /*# sourceMappingURL= style.css.map */
