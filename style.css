@@ -102,10 +102,11 @@
 .bigNanoContainer {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .bigNanoCarousel {
@@ -132,17 +133,23 @@
   transform: rotate(180deg);
 }
 
-.bigNanoSlides {
+.bigNanoSlider {
   display: table-cell;
   vertical-align: middle;
+  max-width: 780px;
+  overflow: hidden;
   width: 100%;
 }
 
-.bigNanoSlides .bigNanoSlide {
+.bigNanoSlider .bigNanoAnimate {
   width: 100%;
 }
 
-.bigNanoSlides .bigNanoSlide p {
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide {
+  width: 100%;
+}
+
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide p {
   color: #fff;
   font-size: 14px;
   line-height: 1.5;
@@ -151,17 +158,17 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.bigNanoSlides .bigNanoSlide p.mainOfferBig {
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide p.mainOfferBig {
   font-size: 2.5em;
   line-height: 1;
   font-weight: bold;
 }
 
-.bigNanoSlides .bigNanoSlide p.mainOfferSmall {
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide p.mainOfferSmall {
   font-size: 1.4em;
 }
 
-.bigNanoSlides .bigNanoSlide .mainOfferlink {
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide .mainOfferlink {
   color: #fff;
   font-size: 1.3em;
   font-weight: bold;
@@ -169,7 +176,7 @@
   display: inline-block;
 }
 
-.bigNanoSlides .bigNanoSlide .mainOfferdisc {
+.bigNanoSlider .bigNanoAnimate .bigNanoSlide .mainOfferdisc {
   color: #fff;
   font-size: .8em;
 }
