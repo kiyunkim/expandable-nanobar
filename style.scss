@@ -1,3 +1,5 @@
+$font: "Futura LT W01 Medium", Arial, Helvetica, sans-serif;
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -27,16 +29,16 @@
 /* full width */
 .expandNanoContainer {
   width: 100%;
-  background-color: #000;
+  background-color: #111;
 }
 /* width of website */
 .expandNanoWrapper {
-  max-width: 984px;
+  max-width: 1260px;
   width: 100%;
   margin: 0 auto;
 }
 /* expand functionality */
-.expandNanoInput { display: none; }
+input[type=checkbox].expandNanoInput { display: none; }
 .expandNanoLabel {
   cursor: pointer;
   display: table;
@@ -67,20 +69,17 @@
 /* mini list */
 .miniOfferList {
   display: table-cell;
-  height: 20px;
-  overflow: hidden;
   padding: 10px 0;
   @include transition(all 1s ease);
 }
 .miniOffer {
   display: none;
   color: #fff;
-  text-decoration: none;
-  font-weight: bold;
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-family: $font;
   cursor: pointer;
 }
 .miniOffer.active {
@@ -130,7 +129,7 @@
       line-height: 1.5;
       text-align: center;
       text-transform: uppercase;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: $font;
     }
     .bigNanoSlide p.mainOfferBig {
       font-size: 2.5em;
