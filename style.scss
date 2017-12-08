@@ -24,7 +24,8 @@ $font: "Futura LT W01 Medium", Arial, Helvetica, sans-serif;
   -o-transform: $var;
   transform: $var;
 }
-
+// hide monetate preview
+body monetatepreview.mt-pb { width: auto; }
 
 /* full width */
 .expandNanoContainer {
@@ -39,10 +40,12 @@ $font: "Futura LT W01 Medium", Arial, Helvetica, sans-serif;
 }
 /* expand functionality */
 input[type=checkbox].expandNanoInput { display: none; }
+
 .expandNanoLabel {
   cursor: pointer;
   display: table;
   width: 100%;
+  padding: 1em;
   @include box-sizing();
 }
 /* expand button/arrow */
@@ -69,7 +72,6 @@ input[type=checkbox].expandNanoInput { display: none; }
 /* mini list */
 .miniOfferList {
   display: table-cell;
-  padding: 1em 0;
   @include transition(all 1s ease);
 }
 .miniOffer {
@@ -78,7 +80,6 @@ input[type=checkbox].expandNanoInput { display: none; }
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-family: $font;
   cursor: pointer;
 }
@@ -90,10 +91,11 @@ input[type=checkbox].expandNanoInput { display: none; }
 .bigNanoContainer {
   max-height: 0;
   overflow: hidden;
+  text-align: center;
   @include transition(all .5s ease);
 }
 .bigNanoCarousel {
-  padding: 5px 10%;
+  width: 100%;
   display: table;
   position: relative;
   @include box-sizing();
@@ -101,6 +103,7 @@ input[type=checkbox].expandNanoInput { display: none; }
 .bigNanoCarousel .prevArrow,
 .bigNanoCarousel .nextArrow {
   cursor: pointer;
+  margin: 0 auto;
   display: table-cell;
   vertical-align: middle;
 }
@@ -111,9 +114,7 @@ input[type=checkbox].expandNanoInput { display: none; }
 .bigNanoSlider {
   display: table-cell;
   vertical-align: middle;
-  max-width: 780px;
   overflow: hidden; 
-  width: 100%;
   
   .bigNanoAnimate {
     width: 100%;
@@ -124,6 +125,7 @@ input[type=checkbox].expandNanoInput { display: none; }
     .bigNanoSlide.active {
     }
     .bigNanoSlide p {
+      margin: 0;
       color: #fff;
       font-size: 14px;
       line-height: 1.5;
@@ -151,4 +153,11 @@ input[type=checkbox].expandNanoInput { display: none; }
       font-size: .8em;
     }
   }
+}
+
+
+.expandNanoContainer.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
 }
