@@ -69,7 +69,7 @@ input[type=checkbox].expandNanoInput { display: none; }
 /* mini list */
 .miniOfferList {
   display: table-cell;
-  padding: 10px 0;
+  padding: 1em 0;
   @include transition(all 1s ease);
 }
 .miniOffer {

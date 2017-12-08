@@ -72,7 +72,7 @@ input[type=checkbox].expandNanoInput {
 /* mini list */
 .miniOfferList {
   display: table-cell;
-  padding: 10px 0;
+  padding: 1em 0;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
