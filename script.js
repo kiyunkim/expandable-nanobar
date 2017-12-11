@@ -10,8 +10,8 @@ var expNano = (function(option) {
       toggleContainer = option.toggleContainer;
   
   function init() {
-    $containerClone = $(container).clone();
-    $containerClone.addClass(bottomContainerClass).appendTo('body');
+    //$containerClone = $(container).clone();
+    //$containerClone.addClass(bottomContainerClass).appendTo('body');
     $(container).not(bottomContainerClass).show();
   }
 
