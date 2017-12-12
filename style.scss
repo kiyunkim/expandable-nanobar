@@ -117,7 +117,8 @@ input[type=checkbox].expandNanoInput { display: none; }
   overflow: hidden; 
   
   .bigNanoAnimate {
-    width: 100%;
+    position: relative;
+    // width: 100%;
     
     .bigNanoSlide {
       width: 100%;

@@ -4,6 +4,8 @@ var expNano = (function(option) {
 
       container = option.container,
       $containerClone,
+      sliderAnimate = option.sliderAnimate,
+      sliderWidth,
       bottomContainerClass = option.bottomContainerClass,
       input = option.input,
       inputLabel = option.inputLabel,
@@ -17,6 +19,10 @@ var expNano = (function(option) {
 
   function toggleBar() {
     $(inputLabel).click();
+  }
+
+  function setSliderWidth() {
+    console.log();
   }
 
   function minifyOnScroll() {
@@ -40,6 +46,7 @@ var expNano = (function(option) {
 $(document).ready(function() {
   var expNanoBar = new expNano({
     container: '.expandNanoContainer',
+    sliderAnimate: '.bigNanoAnimate',
     bottomContainerClass: 'bottom-fixed',
     input: '.expandNanoInput',
     inputLabel: '.expandNanoLabel',

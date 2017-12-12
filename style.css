@@ -142,7 +142,7 @@ input[type=checkbox].expandNanoInput {
 }
 
 .bigNanoSlider .bigNanoAnimate {
-  width: 100%;
+  position: relative;
 }
 
 .bigNanoSlider .bigNanoAnimate .bigNanoSlide {
