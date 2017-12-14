@@ -26,12 +26,6 @@ $bgColor: #111;
   transform: $var;
 }
 
-
-// monetate preview
-body monetatepreview.mt-pb { 
-  position: static;
-}
-
 /* full width */
 .expandNanoContainer {
   width: 100%;
@@ -83,24 +77,18 @@ body monetatepreview.mt-pb {
 
 /* carousel list */
 .bigNanoContainer {
-  display: none;
+  // display: none;
   overflow: hidden;
   text-align: center;
-}
-.bigNanoCarousel {
-  width: 100%;
-  display: table;
-  position: relative;
   @include box-sizing();
 }
-.bigNanoCarousel .prevArrow,
-.bigNanoCarousel .nextArrow {
+.bigNanoContainer button.slick-arrow {
   cursor: pointer;
   margin: 0 auto;
   display: table-cell;
   vertical-align: middle;
 }
-.bigNanoCarousel .prevArrow { 
+.bigNanoContainer button.slick-prev { 
   @include transform(rotate(180deg));
 }
 
@@ -109,43 +97,36 @@ body monetatepreview.mt-pb {
   vertical-align: middle;
   overflow: hidden; 
   
-  .bigNanoAnimate {
-    position: relative;
-    // width: 100%;
-    
-    .bigNanoSlide {
-      width: 100%;
-    }
-    .bigNanoSlide.active {
-    }
-    .bigNanoSlide p {
-      margin: 0;
-      color: #fff;
-      font-size: 14px;
-      line-height: 1.5;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: $font;
-    }
-    .bigNanoSlide p.mainOfferBig {
-      font-size: 2.5em;
-      line-height: 1;
-      font-weight: bold;
-    }
-    .bigNanoSlide p.mainOfferSmall {
-      font-size: 1.4em;
-    }
-    .bigNanoSlide .mainOfferlink {
-      color: #fff;
-      font-size: 1.3em;
-      font-weight: bold;
-      padding: .5em;
-      display: inline-block;
-    }
-    .bigNanoSlide .mainOfferdisc {
-      color: #fff;
-      font-size: .8em;
-    }
+  .bigNanoSlide {
+    width: 100%;
+  }
+  .bigNanoSlide p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font;
+  }
+  .bigNanoSlide p.mainOfferBig {
+    font-size: 2.5em;
+    line-height: 1;
+    font-weight: bold;
+  }
+  .bigNanoSlide p.mainOfferSmall {
+    font-size: 1.4em;
+  }
+  .bigNanoSlide .mainOfferlink {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: .5em;
+    display: inline-block;
+  }
+  .bigNanoSlide .mainOfferdisc {
+    color: #fff;
+    font-size: .8em;
   }
 }
 
