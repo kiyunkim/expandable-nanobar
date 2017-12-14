@@ -1,4 +1,5 @@
 $font: "Futura LT W01 Medium", Arial, Helvetica, sans-serif;
+$bgColor: #111;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -26,13 +27,15 @@ $font: "Futura LT W01 Medium", Arial, Helvetica, sans-serif;
 }
 
 
-// hide monetate preview
-body monetatepreview.mt-pb { width: auto; }
+// monetate preview
+body monetatepreview.mt-pb { 
+  position: static;
+}
 
 /* full width */
 .expandNanoContainer {
   width: 100%;
-  background-color: #111;
+  background-color: $bgColor;
 }
 /* width of website */
 .expandNanoWrapper {
@@ -56,6 +59,9 @@ body monetatepreview.mt-pb { width: auto; }
   @include transition(all .3s ease);
   @include transform(rotate(180deg));
   text-align: center;
+}
+.expandNanoButton.active {
+  @include transform(rotate(0deg));
 }
 /* mini list */
 .miniOfferList {
@@ -146,7 +152,25 @@ body monetatepreview.mt-pb { width: auto; }
 
 .expandNanoContainer.bottom-fixed {
   position: fixed;
-  bottom: 0;
-  left: 50%;
-  width: auto;
+  z-index: 22;
+  bottom: 0; 
+  .expandNanoWrapper, 
+  .toggleTab, 
+  .bigNanoContainer {
+    width: auto;
+  }
+  .bigNanoContainer { padding: 1.5em 0; }
+  .toggleTab {
+    background: $bgColor;
+    position: absolute;
+    top: -50px; // figure out exact height in js?
+    left: 50%;
+    margin-left: -25px; // same here abt js
+    .expandNanoButton { display: none; }
+  }
+  .bigNanoSlide {
+    background: lighten($bgColor, 10%);
+    display: inline-block;
+    width: auto;
+  }
 }

@@ -4,14 +4,17 @@ var expNano = (function(option) {
 
       container = option.container,
       $containerClone,
+      showingClass = option.showingClass,
       bottomContainerClass = option.bottomContainerClass,
       toggleTab = option.toggleTab,
+      expandArrow = option.expandArrow,
       sliderAnimate = option.sliderAnimate,
       sliderWidth,
       toggleContainer = option.toggleContainer;
   
   function toggleFunc() {
     $(toggleTab).click(function() {
+      $(this).find(expandArrow).toggleClass(showingClass);
       $(this).next(toggleContainer).slideToggle(300);
     });
   }
@@ -46,7 +49,9 @@ $(document).ready(function() {
   var expNanoBar = new expNano({
     container: '.expandNanoContainer',
     bottomContainerClass: 'bottom-fixed',
+    showingClass: 'active',
     toggleTab: '.toggleTab',
+    expandArrow: '.expandNanoButton',
     sliderAnimate: '.bigNanoAnimate',
     toggleContainer: '.bigNanoContainer'
   });

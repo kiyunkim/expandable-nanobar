@@ -1,5 +1,5 @@
 body monetatepreview.mt-pb {
-  width: auto;
+  position: static;
 }
 
 /* full width */
@@ -42,6 +42,14 @@ body monetatepreview.mt-pb {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   text-align: center;
+}
+
+.expandNanoButton.active {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 /* mini list */
@@ -149,8 +157,35 @@ body monetatepreview.mt-pb {
 
 .expandNanoContainer.bottom-fixed {
   position: fixed;
+  z-index: 22;
   bottom: 0;
+}
+
+.expandNanoContainer.bottom-fixed .expandNanoWrapper,
+.expandNanoContainer.bottom-fixed .toggleTab,
+.expandNanoContainer.bottom-fixed .bigNanoContainer {
+  width: auto;
+}
+
+.expandNanoContainer.bottom-fixed .bigNanoContainer {
+  padding: 1.5em 0;
+}
+
+.expandNanoContainer.bottom-fixed .toggleTab {
+  background: #111;
+  position: absolute;
+  top: -50px;
   left: 50%;
+  margin-left: -25px;
+}
+
+.expandNanoContainer.bottom-fixed .toggleTab .expandNanoButton {
+  display: none;
+}
+
+.expandNanoContainer.bottom-fixed .bigNanoSlide {
+  background: #2b2b2b;
+  display: inline-block;
   width: auto;
 }
  
