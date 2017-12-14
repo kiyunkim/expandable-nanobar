@@ -16,11 +16,7 @@ body monetatepreview.mt-pb {
 }
 
 /* expand functionality */
-input[type=checkbox].expandNanoInput {
-  display: none;
-}
-
-.expandNanoLabel {
+.toggleTab {
   cursor: pointer;
   display: table;
   width: 100%;
@@ -46,32 +42,6 @@ input[type=checkbox].expandNanoInput {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   text-align: center;
-}
-
-.expandNanoInput:checked ~ .expandNanoLabel .expandNanoButton {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.expandNanoInput:checked ~ .expandNanoLabel .miniOfferList {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.expandNanoInput:checked ~ .bigNanoContainer {
-  max-height: 999px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
 /* mini list */
@@ -100,14 +70,9 @@ input[type=checkbox].expandNanoInput {
 
 /* carousel list */
 .bigNanoContainer {
-  max-height: 0;
+  display: none;
   overflow: hidden;
   text-align: center;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 .bigNanoCarousel {
@@ -186,6 +151,7 @@ input[type=checkbox].expandNanoInput {
   position: fixed;
   bottom: 0;
   left: 50%;
+  width: auto;
 }
  
 

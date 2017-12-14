@@ -4,38 +4,37 @@ var expNano = (function(option) {
 
       container = option.container,
       $containerClone,
+      bottomContainerClass = option.bottomContainerClass,
+      toggleTab = option.toggleTab,
       sliderAnimate = option.sliderAnimate,
       sliderWidth,
-      bottomContainerClass = option.bottomContainerClass,
-      input = option.input,
-      inputLabel = option.inputLabel,
       toggleContainer = option.toggleContainer;
   
+  function toggleFunc() {
+    $(toggleTab).click(function() {
+      $(this).next(toggleContainer).slideToggle(300);
+    });
+  }
   function init() {
-    //$containerClone = $(container).clone();
-    //$containerClone.addClass(bottomContainerClass).appendTo('body');
+    $containerClone = $(container).clone().addClass(bottomContainerClass);
+
+    $containerClone.appendTo('body');
     $(container).not(bottomContainerClass).show();
-  }
-
-  function toggleBar() {
-    $(inputLabel).click();
-  }
-
-  function setSliderWidth() {
-    console.log();
   }
 
   function minifyOnScroll() {
     $(window).scroll(function(){
-      // change 0(px) to toggle it further down
+      /* change 0(px) to toggle it further down
       if (($(this).scrollTop() > 0) && ($(input).is(':checked'))) {
         toggleBar();
       } 
+      */
     });
   }
   
   proto.setup = function() {
     init();
+    toggleFunc();
     minifyOnScroll();
   };
   return {
@@ -46,12 +45,10 @@ var expNano = (function(option) {
 $(document).ready(function() {
   var expNanoBar = new expNano({
     container: '.expandNanoContainer',
-    sliderAnimate: '.bigNanoAnimate',
     bottomContainerClass: 'bottom-fixed',
-    input: '.expandNanoInput',
-    inputLabel: '.expandNanoLabel',
+    toggleTab: '.toggleTab',
+    sliderAnimate: '.bigNanoAnimate',
     toggleContainer: '.bigNanoContainer'
   });
   expNanoBar.setup();
-  
 });
